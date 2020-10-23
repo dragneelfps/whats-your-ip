@@ -11,14 +11,19 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     jcenter()
+    maven(url = "https://kotlin.bintray.com/kotlinx/")
 }
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+val ktor_version = "1.4.1"
+
 dependencies {
     implementation("io.kotless", "kotless-lang", "0.1.6")
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-okhttp:$ktor_version")
 }
 
 
